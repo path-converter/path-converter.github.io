@@ -20,7 +20,7 @@
 	function newPath() {
 		calculateSize();
 		var defaultPath=document.getElementById("path").value;
-		document.getElementById("path-new").value = defaultPath.replace("\\" ,"/");
+		document.getElementById("path-new").value = defaultPath.replaceAll("\\" ,"/");
 	}
 	function copyToClipBoardPrompt() {
 		confirm("Converted path copied to clipboard.");
