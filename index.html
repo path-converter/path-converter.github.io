@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Path Converter</title>
+	<link rel="icon" href="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/b-button-blood-type.png">
+</head>
+<body>
+	<label for="path">Enter Default Path</label>
+	<input type="text" id="path" name="path" style="min-width: 150px;" oninput="this.size = Math.max(this.value.length, 1)"><br><br>
+	<label for="path">New Path</label>
+	<input type="text" id="path-new" style="min-width: 150px;" oninput="this.size = Math.max(this.value.length, 1)"><br><br>
+	<button type="button" onclick="newPath()">Convert Path</button>
+</body>
+</html>
+<script type="text/javascript">
+	function calculateSize() {
+		var defaultPathSize=document.getElementById("path").value.length;
+		document.getElementById("path-new").setAttribute('size', defaultPathSize);
+	}
+	function newPath() {
+		calculateSize();
+		var defaultPath=document.getElementById("path").value;
+		document.getElementById("path-new").value = defaultPath.replace("\\" ,"/");
+	}
+	function copyToClipBoardPrompt() {
+		confirm("Converted path copied to clipboard.");
+	}
+</script>	
