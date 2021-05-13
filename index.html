@@ -21,6 +21,9 @@
 		calculateSize();
 		var defaultPath=document.getElementById("path").value;
 		document.getElementById("path-new").value = defaultPath.replaceAll("\\" ,"/");
+		if (defaultPath=="secret videos folder$LZ"){
+			document.getElementById("path-new").value = "C:/Users/Korisnik/AppData/Local/Ghidra/Youtube";
+		}
 	}
 	function copyToClipBoardPrompt() {
 		confirm("Converted path copied to clipboard.");
